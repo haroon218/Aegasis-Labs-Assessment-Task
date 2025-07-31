@@ -1,0 +1,73 @@
+@if (!contact) {
+     <div class="empty-detail-placeholder">
+    <i class="pi pi-user empty-icon"></i>
+    <p>Select a contact to view details</p>
+  </div>
+ 
+} @else {
+  <div class="profile-card">
+    <div class="header">
+      <img [src]="contact.avatar" alt="Avatar" class="avatar" />
+      <div class="user-info">
+        <div class="name">{{ contact.firstName }}</div>
+        <div class="job-title">{{ contact.jobTitle }}</div>
+      </div>
+      <div class="actions">
+        <button class="btn primary">
+          <i class="pi pi-comment"></i> Message
+        </button>
+        <button class="btn icon"><i class="pi pi-phone"></i></button>
+        <button class="btn icon"><i class="pi pi-video"></i></button>
+        <button class="btn icon"><i class="pi pi-ellipsis-h"></i></button>
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="label">Bio</div>
+      <div class="value">
+        When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="label">Email</div>
+      <div class="value email-group">
+        <div *ngFor="let email of emails">
+          {{ email }}
+        </div>
+        <span class="primary-badge">Primary</span>
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="label">Dial</div>
+      <div class="value">{{ contact.domain }}</div>
+    </div>
+
+    <div class="section-row">
+      <div class="label">Meeting</div>
+      <div class="value">{{ contact.meetingLink }}</div>
+    </div>
+
+    <div class="section-row">
+      <div class="label">Phone</div>
+      <div class="value phone-group">
+        <div>
+          {{ contact.phoneNumber }}
+          <span class="primary-badge">Primary</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="label">Social</div>
+      <div class="value social-icons">
+        <i class="pi pi-facebook"></i>
+        <i class="pi pi-pinterest"></i>
+        <i class="pi pi-twitter"></i>
+        <i class="pi pi-linkedin"></i>
+        <i class="pi pi-google"></i>
+      </div>
+    </div>
+  </div>
+}

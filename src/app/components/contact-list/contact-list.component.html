@@ -1,0 +1,64 @@
+<div class="contact-list-container">
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+      placeholder="Search for a contact"
+      class="search-input"
+    />
+    <p class="search-hint">Name, email or phone number</p>
+  </div>
+
+  <div class="contacts-container">
+    @if (loading) {
+      <ng-container>
+        <div class="contact-card shimmer" *ngFor="let i of [1,2,3,4,5]">
+          <div class="left-section">
+            <div class="avatar-wrapper shimmer-avatar"></div>
+            <div class="info">
+              <div class="shimmer-line short"></div>
+              <div class="shimmer-line long"></div>
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="shimmer-icon"></div>
+            <div class="shimmer-icon"></div>
+            <div class="shimmer-icon"></div>
+          </div>
+        </div>
+      </ng-container>
+    } @else if (filteredContacts.length === 0) {
+    <div class="empty-placeholder">
+      <i class="pi pi-users empty-icon"></i>
+      <p>No contacts found</p>
+    </div>
+  } @else {
+      <div
+        class="contact-card"
+        *ngFor="let contact of filteredContacts"
+        (click)="selectContact(contact)"
+      >
+        <div class="left-section">
+          <div class="avatar-wrapper">
+            <img *ngIf="contact.avatar" [src]="contact.avatar" class="avatar" />
+            <div *ngIf="!contact.avatar" class="avatar initials">
+              {{ contact.firstName.charAt(0) }}{{ contact.lastName.charAt(0) }}
+            </div>
+            <span class="status-dot" [ngClass]="contact.status"></span>
+          </div>
+          <div class="info">
+            <div class="name">{{ contact.firstName }}</div>
+            <div class="job">{{ contact.jobTitle }}</div>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <button class="icon-btn"><i class="pi pi-comment"></i></button>
+          <button class="icon-btn"><i class="pi pi-phone"></i></button>
+          <button class="icon-btn"><i class="pi pi-ellipsis-h"></i></button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

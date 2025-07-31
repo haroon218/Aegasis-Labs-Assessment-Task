@@ -1,0 +1,119 @@
+.profile-card {
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.job-title {
+  font-size: 14px;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.primary {
+  background-color: #6b4eff;
+  color: #fff;
+}
+
+.btn.icon {
+  background-color: #f6f7fa;
+  color: #333;
+}
+
+.section-row {
+  display: flex;
+  margin-bottom: 40px;
+}
+.empty-detail-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 30%;
+  font-size: 16px;
+}
+
+.empty-detail-placeholder .empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  color: #ccc;
+}
+
+.label {
+  width: 80px;
+  font-size: 14px;
+  color: #999;
+}
+
+.value {
+  flex: 1;
+  font-size: 14px;
+}
+
+.primary-badge {
+  background-color: #e5e3ff;
+  color: #6b4eff;
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+.email-group div,
+.phone-group div {
+  margin-bottom: 6px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  font-size: 18px;
+  color: #6c757d;
+}
